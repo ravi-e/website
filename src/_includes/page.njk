@@ -1,0 +1,16 @@
+﻿---
+layout: base.njk
+---
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="page-container">
+    <header class="page-header">
+        <h1>{{ title }}</h1>
+    </header>
+    
+    <article class="page-content">
+        {{ content | safe }}
+    </article>
+</div>
+{% endblock %}
