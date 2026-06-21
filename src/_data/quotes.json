@@ -1,0 +1,37 @@
+[
+  {
+    "text": "Great documentation isn't just about explaining how a product works. It's about empowering the user to succeed with as little friction as possible.",
+    "author": "Ravi Esakkiappan",
+    "theme": "Philosophy",
+    "date": "2026-06-01",
+    "featured": true
+  },
+  {
+    "text": "Great documentation empowers users to be self-sufficient.",
+    "author": "Unknown",
+    "theme": "Documentation",
+    "date": "2026-05-15",
+    "featured": false
+  },
+  {
+    "text": "Simplicity is the ultimate sophistication.",
+    "author": "Leonardo da Vinci",
+    "theme": "Design",
+    "date": "2026-04-10",
+    "featured": false
+  },
+  {
+    "text": "The details are not the details. They make the design.",
+    "author": "Charles Eames",
+    "theme": "Design",
+    "date": "2026-03-01",
+    "featured": false
+  },
+  {
+    "text": "Docs-as-code is not just about using markdown; it's about treating documentation with the same engineering rigor as code.",
+    "author": "Technical Writing Wisdom",
+    "theme": "Documentation",
+    "date": "2026-02-15",
+    "featured": false
+  }
+]

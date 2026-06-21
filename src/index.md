@@ -1,7 +1,127 @@
-﻿---
+---
 title: Home
 layout: base.njk
 ---
-# Welcome to My Site
 
-This is the home page. It hooks directly into the master `base.njk` shell.
+<div class="hero-container">
+  <div class="hero-box">
+    <h1>Ravi Esakkiappan</h1>
+    <p class="editorial-support" style="margin-bottom: 2rem;">
+      Senior Technical Writer &bull; Documenting Developer Workflows &bull; Designing Scalable Docs-as-Code Architectures.
+    </p>
+    
+    <div class="about-teaser-block" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+      <div class="home-profile-frame">
+        <img src="/assets/scenic.jpg" alt="Ravi Esakkiappan overlooking a scenic mountain view">
+      </div>
+      <div>
+        <span class="editorial-kicker">About Me</span>
+        <p class="editorial-support" style="margin-bottom: 0.8rem; font-size: 1.05rem;">
+          I make complex systems understandable. With 10+ years of technical writing experience at NCR Atleos and HPE, I bridge the gap between engineering complexity and user enablement. I specialize in Docs-as-Code workflows, DITA XML, and structuring large knowledge bases.
+        </p>
+        <a href="/about/" class="editorial-meta-link">Read my professional background &rarr;</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="hero-sidebar">
+    <span class="hero-sidebar-title">Explore Ledger</span>
+    <ul class="hero-sidebar-links">
+      <li>
+        <a href="/projects/">Projects</a>
+        <span class="hero-sidebar-desc">Developer tools, apps, and codebase work.</span>
+      </li>
+      <li>
+        <a href="/notes/">Notes</a>
+        <span class="hero-sidebar-desc">Chronological timeline stream of short-form thoughts.</span>
+      </li>
+      <li>
+        <a href="/reading/">Reading</a>
+        <span class="hero-sidebar-desc">Live book logs synced from Goodreads.</span>
+      </li>
+      <li>
+        <a href="/games/">Games</a>
+        <span class="hero-sidebar-desc">Live gaming logs synced from Steam.</span>
+      </li>
+      <li>
+        <a href="/quotations/">Quotes</a>
+        <span class="hero-sidebar-desc">Curated industry philosophies and citations.</span>
+      </li>
+      <li>
+        <a href="/uses/">Uses</a>
+        <span class="hero-sidebar-desc">Workstation hardware, terminal, and soft setup.</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="index-grid">
+  <!-- Latest Writing -->
+  <div class="surface surface-hover">
+    <span class="editorial-kicker">Latest Writing</span>
+    {% if collections.writing | length > 0 %}
+      {% set post = collections.writing[0] %}
+      <h2 class="editorial-title"><a href="{{ post.url }}" class="editorial-title-link">{{ post.data.title }}</a></h2>
+      <p class="editorial-support" style="font-size: 0.95rem; margin-bottom: 0.8rem;">
+        {{ post.data.description or "Read the latest article on engineering practices and documentation design." }}
+      </p>
+      <a href="/writing/" class="editorial-meta-link">Browse all articles &rarr;</a>
+    {% else %}
+      <p class="editorial-support">No articles published yet.</p>
+    {% endif %}
+  </div>
+
+  <!-- Latest Project -->
+  <div class="surface surface-hover">
+    <span class="editorial-kicker">Latest Project</span>
+    {% if collections.projects | length > 0 %}
+      {% set project = collections.projects[0] %}
+      <h2 class="editorial-title"><a href="{{ project.url }}" class="editorial-title-link">{{ project.data.title }}</a></h2>
+      <p class="editorial-support" style="font-size: 0.95rem; margin-bottom: 0.8rem;">
+        {{ project.data.description or "Review the latest development and technical documentation showcase." }}
+      </p>
+      <a href="/projects/" class="editorial-meta-link">View all projects &rarr;</a>
+    {% else %}
+      <p class="editorial-support">No projects cataloged yet.</p>
+    {% endif %}
+  </div>
+
+  <!-- Latest Note -->
+  <div class="surface surface-hover">
+    <span class="editorial-kicker">Latest Note</span>
+    {% if collections.notes | length > 0 %}
+      {% set note = collections.notes[0] %}
+      <h2 class="editorial-title" style="font-size: 1.25rem;"><a href="{{ note.url }}" class="editorial-title-link">{{ note.data.title }}</a></h2>
+      <p class="editorial-support" style="font-size: 0.95rem; margin-bottom: 0.8rem;">
+        {{ note.templateContent | stripHtml | truncate(120) | safe }}
+      </p>
+      <a href="/notes/" class="editorial-meta-link">Read all notes &rarr;</a>
+    {% else %}
+      <p class="editorial-support">No short-form notes recorded yet.</p>
+    {% endif %}
+  </div>
+
+  <!-- Featured Quotation -->
+  <div class="surface surface-hover">
+    <span class="editorial-kicker">Featured Thought</span>
+    {% set featuredQuote = null %}
+    {% for q in quotes %}
+      {% if q.featured %}
+        {% set featuredQuote = q %}
+      {% endif %}
+    {% endfor %}
+    {% if featuredQuote %}
+      <blockquote style="border-left: 2px solid var(--accent-color); padding-left: 0.8rem; font-style: italic; font-size: 1rem; margin-bottom: 0.5rem;">
+        "{{ featuredQuote.text }}"
+      </blockquote>
+      <cite style="font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; display: block; color: rgb(115, 115, 115); letter-spacing: 0.05em; font-style: normal;">
+        &mdash; {{ featuredQuote.author }}
+      </cite>
+    {% else %}
+      <p class="editorial-support">Keep documentation clean and clear.</p>
+    {% endif %}
+    <div style="margin-top: 0.8rem;">
+      <a href="/quotations/" class="editorial-meta-link">View curated quotes &rarr;</a>
+    </div>
+  </div>
+</div>

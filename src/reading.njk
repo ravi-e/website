@@ -1,0 +1,71 @@
+---
+layout: page.njk
+title: Reading
+permalink: /reading/
+---
+
+<p class="editorial-support" style="margin-bottom: 2rem;">
+  A live-updating ledger of books I'm reading or have recently finished, fetched directly from my public <a href="https://www.goodreads.com/review/list/8863121" target="_blank" rel="noopener">Goodreads shelf</a>.
+</p>
+
+{% if reading.currently_reading and reading.currently_reading.length > 0 %}
+<div style="margin-bottom: 3.5rem;">
+  <span class="editorial-kicker">Currently Reading</span>
+  <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1rem;">
+    {% for book in reading.currently_reading %}
+      <div class="surface currently-reading-card">
+        {% if book.cover %}
+          <div class="book-cover-frame">
+            <img src="{{ book.cover }}" alt="Cover of {{ book.title }}">
+          </div>
+        {% endif %}
+        <div style="flex: 1; min-width: 0;">
+          <h3 style="font-family: var(--font-sans); font-size: 1.3rem; font-weight: 800; margin-top: 0; margin-bottom: 0.3rem;">{{ book.title }}</h3>
+          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-color); margin-bottom: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+            By {{ book.author }} {% if book.published %}&bull; Published {{ book.published }}{% endif %}
+          </p>
+          <div class="editorial-support" style="font-size: 0.95rem; line-height: 1.6;">
+            {{ book.description | safe }}
+          </div>
+          <div style="margin-top: 1.2rem;">
+            <a href="{{ book.link }}" class="editorial-meta-link" target="_blank" rel="noopener">Goodreads Entry &rarr;</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div>
+  <span class="editorial-kicker">Finished Books</span>
+  <div style="display: flex; flex-direction: column; margin-top: 1rem; border-top: 1px solid var(--border-color);">
+    {% for book in reading.read %}
+      <div class="finished-book-row">
+        {% if book.cover %}
+          <div class="finished-book-cover">
+            <img src="{{ book.cover }}" alt="Cover of {{ book.title }}">
+          </div>
+        {% endif %}
+        <div style="flex: 1; min-width: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+            <h4 style="font-family: var(--font-sans); font-size: 1.05rem; font-weight: 700; margin: 0;">
+              <a href="{{ book.link }}" target="_blank" rel="noopener" style="text-decoration: none; border-bottom: 1px solid transparent;">{{ book.title }}</a>
+            </h4>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: rgb(115, 115, 115); text-transform: uppercase; letter-spacing: 0.02em;">
+              Read {{ book.readAt | readableDate }}
+            </span>
+          </div>
+          <p style="font-family: var(--font-serif); font-size: 0.95rem; margin: 0.15rem 0 0.3rem; opacity: 0.85;">
+            By {{ book.author }}
+          </p>
+          {% if book.rating > 0 %}
+            <div style="color: var(--accent-color); font-size: 0.85rem; letter-spacing: 0.1em;" aria-label="{{ book.rating }} out of 5 stars">
+              {% for i in range(0, book.rating) %}★{% endfor %}{% for i in range(book.rating, 5) %}☆{% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

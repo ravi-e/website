@@ -1,16 +1,72 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
-    <meta name="description" content="{{ site.description }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Ravi E</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <script>
+    // Inline dark mode switcher to prevent visual flash
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </head>
 <body>
-    <main>
-        {% block content %}
-            {{ content | safe }}
-        {% endblock %}
-    </main>
+  <header>
+    <div class="logo">
+      <a href="/" style="text-decoration: none; font-family: var(--font-sans); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em;">Ravi E</a>
+    </div>
+    <nav style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
+      <a href="/about/" {% if page.url == '/about/' %}class="active"{% endif %}>About</a>
+      <a href="/portfolio/" {% if page.url.startsWith('/portfolio/') %}class="active"{% endif %}>Portfolio</a>
+      <a href="/assets/Ravi_Esakkiappan.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="/more/" {% if page.url == '/more/' %}class="active"{% endif %}>...More</a>
+      <button id="theme-toggle" class="theme-btn" style="margin-left: 0.5rem; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0;" aria-label="Toggle Theme">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span style="font-family: var(--font-sans); font-weight: 700; color: var(--text-color);">Ravi Esakkiappan</span>
+        <p style="text-transform: none; margin-top: 0.2rem; font-family: var(--font-serif); font-size: 0.9rem; color: var(--text-color); opacity: 0.8;">Technical Writer & Documentarian</p>
+      </div>
+      <div>
+        <ul class="footer-links">
+          <li><a href="https://github.com/ravi-e" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/ravi-es/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="/more/">More</a></li>
+          <li><a href="/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ravi E. Built with 11ty.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
 </body>
 </html>

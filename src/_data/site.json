@@ -1,8 +1,6 @@
 ﻿{
-  "name": "Ravi Esakkiappan",
-  "description": "My Personal Portfolio & Writing",
+  "title": "Ravi E",
+  "description": "Technical Writer • Vibe Coder • Documenting AI Experiments",
   "url": "https://ravi-e.com",
-  "author": {
-    "name": "Ravi Esakkiappan"    
-  }
+  "author": "Ravi Esakkiappan"
 }

@@ -1,0 +1,42 @@
+---
+title: Projects
+layout: base.njk
+---
+
+<div style="margin-bottom: 2rem;">
+  <span class="editorial-kicker">Showcase</span>
+  <h1 style="font-family: var(--font-sans); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;">Featured Projects</h1>
+  <p class="editorial-support" style="margin-top: 0.5rem; font-size: 1.1rem;">
+    A collection of mobile applications, developer tool showcases, and open-source contributions.
+  </p>
+</div>
+
+<div class="index-grid">
+  {% for project in collections.projects %}
+    <div class="surface surface-hover">
+      <span class="editorial-kicker">{{ project.data.category or "Project" }}</span>
+      <h2 class="editorial-title" style="margin: 0.2rem 0 0.5rem;"><a href="{{ project.url }}" class="editorial-title-link">{{ project.data.title }}</a></h2>
+      <p class="editorial-support" style="font-size: 0.95rem; margin-bottom: 1rem;">
+        {{ project.data.description }}
+      </p>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+        {% for tech in project.data.technologies %}
+          <span class="tag">{{ tech }}</span>
+        {% endfor %}
+      </div>
+      <a href="{{ project.url }}" class="editorial-meta-link">Read project details &rarr;</a>
+    </div>
+  {% else %}
+    <p class="editorial-support">No projects available right now. Check back soon!</p>
+  {% endfor %}
+
+  <!-- GitHub Links -->
+  <div class="surface grid-span-all">
+    <span class="editorial-kicker">Open Source</span>
+    <h2 class="editorial-title" style="margin: 0.2rem 0 0.5rem;">GitHub Repositories</h2>
+    <p class="editorial-support" style="font-size: 0.98rem; margin-bottom: 1rem;">
+      I maintain several utility scripts, custom setups, and documentation template sandboxes on my GitHub profile.
+    </p>
+    <a href="https://github.com/ravi-e" target="_blank" rel="noopener" class="editorial-meta-link">Visit GitHub Profile &rarr;</a>
+  </div>
+</div>

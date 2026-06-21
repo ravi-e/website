@@ -1,0 +1,74 @@
+---
+layout: page.njk
+title: Games
+permalink: /games/
+---
+
+<p class="editorial-support" style="margin-bottom: 2.5rem;">
+  A log of games I've been playing recently, synced from my <a href="https://steamcommunity.com/id/snowfire88/" target="_blank" rel="noopener">Steam Profile</a>.
+</p>
+
+{% if games.list and games.list.length > 0 %}
+  {% set latestGame = games.list[0] %}
+  
+  <!-- Prominently Featured Latest Game -->
+  <div style="margin-bottom: 3.5rem;">
+    <span class="editorial-kicker">Currently Playing / Last Played</span>
+    <div class="surface" style="display: flex; gap: 1.8rem; align-items: flex-start; padding: 1.8rem; flex-direction: column; sm-flex-direction: row; border-left: 2px solid var(--accent-color); border-radius: 0.12rem;">
+      {% if latestGame.logo %}
+        <div style="flex-shrink: 0; width: 180px; border: 1px solid var(--border-color); box-shadow: 4px 4px 0px var(--border-color); background: #1a1a1a; padding: 0.15rem; border-radius: 0.12rem;">
+          <img src="{{ latestGame.logo }}" alt="Artwork for {{ latestGame.title }}" style="width: 100%; height: auto; display: block; border-radius: 0.05rem;">
+        </div>
+      {% endif %}
+      <div style="flex: 1; min-width: 0;">
+        <h3 style="font-family: var(--font-sans); font-size: 1.5rem; font-weight: 800; margin-top: 0; margin-bottom: 0.5rem; line-height: 1.2;">
+          <a href="{{ latestGame.link }}" target="_blank" rel="noopener" style="text-decoration: none;">{{ latestGame.title }}</a>
+        </h3>
+        
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+          <div>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; color: rgb(115, 115, 115); letter-spacing: 0.05em; display: block;">Recent Playtime</span>
+            <span style="font-family: var(--font-sans); font-size: 1.35rem; font-weight: 800; color: var(--accent-color);">{{ latestGame.hours2Weeks }} hrs</span>
+          </div>
+          <div>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; color: rgb(115, 115, 115); letter-spacing: 0.05em; display: block;">Total Playtime</span>
+            <span style="font-family: var(--font-sans); font-size: 1.35rem; font-weight: 800; color: var(--text-color);">{{ latestGame.hoursTotal }} hrs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Other Library Games -->
+  {% if games.list.length > 1 %}
+    <div>
+      <span class="editorial-kicker">Other games in Steam library</span>
+      <div style="display: flex; flex-direction: column; margin-top: 1rem; border-top: 1px solid var(--border-color);">
+        {% for game in games.list.slice(1) %}
+          <div class="finished-book-row" style="display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.2rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 0;">
+            {% if game.logo %}
+              <div style="flex-shrink: 0; width: 90px; border: 1px solid var(--border-color); box-shadow: 2px 2px 0px var(--border-color); background: #1a1a1a; padding: 0.15rem; border-radius: 0.12rem;">
+                <img src="{{ game.logo }}" alt="Artwork for {{ game.title }}" style="width: 100%; height: auto; display: block; border-radius: 0.05rem;">
+              </div>
+            {% endif %}
+            <div style="flex: 1; min-width: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+                <h4 style="font-family: var(--font-sans); font-size: 1.1rem; font-weight: 700; margin: 0;">
+                  <a href="{{ game.link }}" target="_blank" rel="noopener" style="text-decoration: none;">{{ game.title }}</a>
+                </h4>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: rgb(115, 115, 115);">
+                  {{ game.hoursTotal }} hrs total
+                </span>
+              </div>
+              {% if game.hours2Weeks > 0 %}
+                <p style="font-family: var(--font-mono); font-size: 0.72rem; margin: 0.2rem 0 0; color: var(--accent-color); font-weight: 700; text-transform: uppercase;">
+                  {{ game.hours2Weeks }} hrs played recently
+                </p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
