@@ -905,6 +905,39 @@ footer {
   border-radius: 0.05rem;
 }
 
+/* Post & Project Image Frame and Caption */
+.post-image-frame {
+  border: 1px solid var(--border-color);
+  background-color: var(--background);
+  padding: 0.6rem;
+  border-radius: 0.12rem;
+  display: block;
+  margin: 2rem auto;
+  max-width: 100%;
+  box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.post-image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border-color);
+  border-radius: 0.05rem;
+}
+
+.post-image-caption {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-top: 0.6rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.4rem;
+  display: block;
+}
+
+
 
 
 

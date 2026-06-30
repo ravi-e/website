@@ -35,7 +35,7 @@ layout: base.njk
     <span class="editorial-kicker">Open Source</span>
     <h2 class="editorial-title" style="margin: 0.2rem 0 0.5rem;">GitHub Repositories</h2>
     <p class="editorial-support" style="font-size: 0.98rem; margin-bottom: 1rem;">
-      I maintain several utility scripts, custom setups, and documentation template sandboxes on my GitHub profile.
+      My GitHub profile hosts my open-source projects that I built to solve some real-world personal problems. Feel free to explore, fork, and contribute!
     </p>
     <a href="https://github.com/ravi-e" target="_blank" rel="noopener" class="editorial-meta-link">Visit GitHub Profile &rarr;</a>
   </div>
