@@ -37,11 +37,11 @@ Over 10 years ago, I "switched lanes" to **Technical Writing**. This role finall
 #### **Enterprise Experience**
 My experience spans major global players in the technology and fintech sectors, where I have managed complex documentation suites:
 
-* **Senior Technical Writer at NCR Atleos:** Currently focusing on high-stakes documentation for enterprise-level hardware and software solutions.
-* **Technical Writing at Lionbridge (for HPE):** Managed specialized documentation projects, focusing on modularity and content reuse within complex technical domains.
+* **Senior Technical Writer at NCR Atleos:** Managing enterprise documentation suites by driving MadCap Flare and GitHub migrations, pioneering AI-agent workflows for automated QA and content generation, and contributing UX writing to product mockups under global brand standards.
+* **Technical Writing at Lionbridge (for HPE):** Led global documentation initiatives for server hardware, software, and telecom solutions. Transformed legacy content into DITA XML compliance, mentored junior writers, and established rigorous quality standards that earned three excellence awards.
 
-#### **Current Focus: Docs-as-Code**
-While my foundation is built on structured authoring tools like **DITA XML** and **MadCap Flare**, I am currently expanding my expertise into **Docs-as-Code** methodologies. 
+#### **Current Focus: Next-Gen Documentation Architecture**
+Moving beyond traditional structured authoring like **DITA XML** and **MadCap Flare**, I am currently focusing on the intersection of docs-as-code methodologies and AI-agent driven optimizations to automate and streamline enterprise documentation workflows. 
 
 ---
 
@@ -57,8 +57,9 @@ While my foundation is built on structured authoring tools like **DITA XML** and
 
 When I am not structuring content or experimenting with static site generators, I am usually exploring other technical interests:
 
+* **Local LLMs & AI Tinkering**: I am deeply interested in running local Large Language Models (LLMs) on my desktop setup. I love the hands-on process of benchmarking different models, understanding the advantages of various inference harnesses, and tweaking parameters to balance optimal token generation with lower memory consumption. It’s been incredibly fun leveraging these local tools alongside Google's AI suite to supercharge my workflow, craft my personal website, and hack away at side projects.
 * **Technology & Gadgets:** I keep a close eye on the mobile ecosystem (currently using a **Google Pixel 9 Pro**). I also have a keen interest in the EV space (currently riding an **Ather Rizta**).
-* **PC Hardware & Gaming:** I am a PC enthusiast who prefers the precision of a keyboard and mouse over consoles. I take a hands-on approach to my setup, having personally sourced each component and assembled my current build by hand.
+* **PC Hardware & Gaming:** I am a PC builder who prefers the precision of a keyboard and mouse over consoles. I take a hands-on approach to my setup, having personally sourced each component and assembled my current build by hand.
 * **Travel:** I enjoy the logistical challenge of planning complex travel itineraries, from domestic regions like Sikkim and Pondicherry to international destinations like the Maldives.
 
 ---
@@ -70,6 +71,5 @@ I am currently exploring opportunities for technical writing roles where I can c
 <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
   <a href="/assets/Ravi_Esakkiappan.pdf" target="_blank" rel="noopener" class="badge badge-accent">Download Resume (PDF)</a>
   <a href="https://www.linkedin.com/in/ravi-es/" target="_blank" rel="noopener" class="badge">LinkedIn Profile</a>
-  <a href="https://github.com/ravi-e" target="_blank" rel="noopener" class="badge">GitHub Account</a>
-  <a href="mailto:ravi.esakkiappan@example.com" class="badge">Email Me</a>
+  <a href="https://github.com/ravi-e" target="_blank" rel="noopener" class="badge">GitHub Account</a>  
 </div>

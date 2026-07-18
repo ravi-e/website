@@ -1,14 +1,18 @@
 ---
 layout: page.njk
 title: Reading
-permalink: /reading/
+pagination:
+  data: reading.read
+  size: 15
+  alias: books
+permalink: "/reading/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 
 <p class="editorial-support" style="margin-bottom: 2rem;">
   A live-updating ledger of books I'm reading or have recently finished, fetched directly from my public <a href="https://www.goodreads.com/review/list/8863121" target="_blank" rel="noopener">Goodreads shelf</a>.
 </p>
 
-{% if reading.currently_reading and reading.currently_reading.length > 0 %}
+{% if pagination.pageNumber == 0 and reading.currently_reading and reading.currently_reading.length > 0 %}
 <div style="margin-bottom: 3.5rem;">
   <span class="editorial-kicker">Currently Reading</span>
   <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1rem;">
@@ -40,7 +44,7 @@ permalink: /reading/
 <div>
   <span class="editorial-kicker">Finished Books</span>
   <div style="display: flex; flex-direction: column; margin-top: 1rem; border-top: 1px solid var(--border-color);">
-    {% for book in reading.read %}
+    {% for book in books %}
       <div class="finished-book-row">
         {% if book.cover %}
           <div class="finished-book-cover">
@@ -69,3 +73,25 @@ permalink: /reading/
     {% endfor %}
   </div>
 </div>
+
+<nav aria-label="Pagination" style="margin-top: 3rem; display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-mono); font-size: 0.85rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+  <div>
+    {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}" class="editorial-meta-link">&larr; Previous Page</a>
+    {% else %}
+      <span style="opacity: 0.4;">&larr; Previous Page</span>
+    {% endif %}
+  </div>
+  
+  <div style="color: rgb(115, 115, 115);">
+    Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}
+  </div>
+  
+  <div>
+    {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}" class="editorial-meta-link">Next Page &rarr;</a>
+    {% else %}
+      <span style="opacity: 0.4;">Next Page &rarr;</span>
+    {% endif %}
+  </div>
+</nav>

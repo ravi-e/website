@@ -24,4 +24,5 @@ This site is designed to feel like a **personal notebook, archive, and workbench
 - **Static Site Generator:** [Eleventy (11ty) v3](https://www.11ty.dev/) compiling Markdown files using Nunjucks templating.
 - **Styling:** Custom Vanilla CSS (`src/assets/css/main.css`) with CSS variables to ensure fast load times and clean, direct styling control.
 - **Dark Mode:** Local storage check inside the HTML `<head>` tag to prevent page flashing, paired with a custom header toggle button.
+- **Integrations & Feeds:** Dynamic data synced on build from the Steam XML profile feed and Goodreads RSS feed using custom Node.js parser scripts with a custom-built HTML entity decoder (handling decimal, hex, and named entities).
 - **Deployment:** Managed using Git version control on GitHub.

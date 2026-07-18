@@ -1,14 +1,29 @@
+function decodeHtmlEntities(str) {
+  if (!str) return '';
+  
+  const namedEntities = {
+    amp: '&', lt: '<', gt: '>', quot: '"', apos: "'",
+    nbsp: ' ', ndash: '–', mdash: '—',
+    lsquo: '‘', rsquo: '’', ldquo: '“', rdquo: '”',
+    middot: '·', hellip: '…',
+    ouml: 'ö', auml: 'ä', uuml: 'ü',
+    Ouml: 'Ö', Auml: 'Ä', Uuml: 'Ü',
+    eacute: 'é', aacute: 'á', oacute: 'ó', iacute: 'í', uacute: 'ú',
+    Eacute: 'É', Aacute: 'Á', Oacute: 'Ó', Iacute: 'Í', Uacute: 'Ú'
+  };
+
+  return str
+    .replace(/&#(\d+);/g, (match, dec) => String.fromCharCode(dec))
+    .replace(/&#x([0-9a-fA-F]+);/g, (match, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&([a-zA-Z0-9]+);/g, (match, name) => namedEntities[name] || match);
+}
+
 // Clean CDATA and extract tag content from item block
 function extractTag(itemXml, tag) {
   const match = itemXml.match(new RegExp(`<${tag}>(?:<!\\[CDATA\\[([\\s\\S]*?)\\]\\]>|([\\s\\S]*?))<\/${tag}>`));
   if (!match) return '';
   const val = (match[1] || match[2] || '').trim();
-  return val
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'");
+  return decodeHtmlEntities(val);
 }
 
 export default async function() {

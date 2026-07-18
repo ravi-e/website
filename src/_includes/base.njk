@@ -56,6 +56,15 @@
     </div>
   </footer>
 
+  <!-- Lightbox Popup container -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close image popup">&times;</button>
+      <img class="lightbox-image" id="lightbox-img" src="" alt="">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
     toggleBtn.addEventListener('click', () => {
@@ -65,6 +74,53 @@
       } else {
         document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Lightbox implementation for article images
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.prose img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        
+        // Use sibling caption if inside .post-image-frame, else fall back to image alt text
+        const frame = img.closest('.post-image-frame');
+        const captionEl = frame ? frame.querySelector('.post-image-caption') : null;
+        lightboxCaption.textContent = captionEl ? captionEl.textContent : (img.alt || '');
+
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        if (!lightbox.classList.contains('active')) {
+          lightboxImg.src = '';
+          lightboxCaption.textContent = '';
+        }
+      }, 250);
+    };
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
       }
     });
   </script>

@@ -26,7 +26,7 @@ Honestly, WanderWing was born out of my own impatience. I didn't want to go to G
   <span class="post-image-caption">Winding mountain passes cutting through the lush, misty valleys of Sikkim en route Nathu La.</span>
 </div>
 
-But Canvas had its limits. The biggest issue was that the link had to be manually saved, and the conversation would inevitably get buried under a mountain of newer chats. It also used to just randomly bug out and would not build the app no matter how much you prompted. You would have to copy the project and make a fresh attempt to coax it to iron out its bugs. So, fresh off building [EndoQuiz](/projects/endoquiz/), I decided to use Antigravity to rebuild WanderWing from scratch as a proper web app. Frustratingly, I ran into a wall of UI bugs, and it took a lot of late-night wrangling to get the layout to cooperate.
+But Canvas had its limits. The biggest issue was that the link had to be manually saved, and the conversation would inevitably get buried under a mountain of newer chats. It also used to just randomly bug out and would not build the app no matter how much you prompted. You would have to copy the project and make a fresh attempt to coax it to iron out its bugs. Here's the last [working version](https://gemini.google.com/share/049f603f8de3) I could find in my chats. So, fresh off building [EndoQuiz](/projects/endoquiz/), I decided to use Antigravity to rebuild WanderWing from scratch as a proper web app. Frustratingly, I ran into a wall of UI bugs, and it took a lot of late-night wrangling to get the layout to cooperate.
 
 It still has a few quirks I need to iron out, but this project has spent enough time in the oven. I don't want to overcook it in a futile quest for perfection. The plan now is to ship the MVP, treat it like a SaaS product, and iterate on it. Hopefully, someone else finds it useful enough to grab the code and adapt it for their own travels.
 
@@ -44,6 +44,5 @@ Like all my projects, the source code is open on GitHub for anyone who wants to 
 
 ## Code & Resources
 
-- **GitHub Repository:** [github.com/ravi-e/wanderwing](https://github.com/ravi-e) *(Simulated)*
-- **Live App:** [wanderwing.ravi-e.com](https://ravi-e.com) *(Simulated)*
-
+- **GitHub Repository:** [github.com/ravi-e/WanderWing](https://github.com/ravi-e/WanderWing)
+- **Live App:** Coming soon! (I am still figuring out how to host it at my own domain, but I will update this section once I do.)

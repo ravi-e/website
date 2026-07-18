@@ -24,7 +24,7 @@ Built completely with **Eleventy (11ty)**, **Nunjucks** templates, and **Vanilla
 - **Portfolio Showcase (/portfolio/)**: Interactive showcase utilizing client-side sidebar tabs for technical writing samples (Overview, Onboarding, CLI, API, and Troubleshooting) with structured context callouts.
 - **Projects (/projects/)**: Chronological grid of codebases, mobile apps, and tools tagged by stack.
 - **Notes & Timelines (/notes/)**: Stream of timeline micro-posts and short-form thoughts.
-- **Goodreads Bookshelf (/reading/)**: Synchronized bookshelf reading tracker pulling dynamically from a public Goodreads RSS feed (ID: `8863121`) during builds. Separates currently reading from finished books, displaying star ratings and page counts.
+- **Goodreads Bookshelf (/reading/)**: Synchronized bookshelf reading tracker pulling dynamically from a public Goodreads RSS feed (ID: `8863121`) during builds. Integrates custom HTML entity decoding to cleanly parse special characters, separates currently reading from finished books, and paginates the archives.
 - **Steam Gaming Ledger (/games/)**: Synced recent gaming bookshelf logging playtime hours and titles directly from a public Steam profile feed (`snowfire88`). Features a large showcase card for the last-played game.
 - **Uses Page (/uses/)**: Fully responsive Catppuccin-styled **Neofetch terminal block** displaying computer hardware specs, software suites, audio setups, VR gear, and Ather EV scooter.
 - **Colophon (/colophon/)**: Design details, stack metrics, and build philosophy.

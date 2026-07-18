@@ -7,7 +7,7 @@ layout: base.njk
   <span class="editorial-kicker">Quotes</span>
   <h1 style="font-family: var(--font-sans); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;">Curated Thoughts</h1>
   <p class="editorial-support" style="margin-top: 0.5rem; font-size: 1.1rem;">
-    A collections of industry wisdom, design philosophies, and principles that guide my work.
+    Stray insights, pop culture echoes, and internet text fragments that stuck with me.
   </p>
 </div>
 
