@@ -19,3 +19,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## License Exceptions
+
+The permissions granted by this MIT License apply to the software codebase and text content of this repository. They do NOT apply to the personal photos, images, and resume assets listed below, which are Copyright © 2026 Ravi E. All Rights Reserved:
+
+- All files in the photography folder: `src/assets/photos/`
+- Profile photo: `src/assets/ravi.jpg`
+- Resume document: `src/assets/Ravi_Esakkiappan.pdf`
+
+No permission is granted to copy, distribute, modify, hotlink, or reuse these assets for any personal or commercial project without prior written consent from the author.
