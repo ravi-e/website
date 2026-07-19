@@ -1,12 +1,12 @@
 # Personal Site & Developer Ledger
 
-A minimal, dense, editorial personal portfolio and developer activity ledger for **Ravi Esakkiappan**. The design language is inspired by the structured, print-journal and archive aesthetics of `carteakey.dev`. 
+A minimal, dense, editorial personal portfolio and activity ledger. The design language is inspired by the structured, print-journal and archive aesthetics of `carteakey.dev`. 
 
 Built completely with **Eleventy (11ty)**, **Nunjucks** templates, and **Vanilla CSS** (zero CSS frameworks).
 
 ---
 
-## 🎨 Design Philosophy & Aesthetics
+## Design Philosophy & Aesthetics
 
 - **Dense & Editorial**: Structured like a structured print journal with clean, square borders (`border-radius: 0.12rem`), flat variables, and high information density.
 - **Strict Typography**:
@@ -18,7 +18,7 @@ Built completely with **Eleventy (11ty)**, **Nunjucks** templates, and **Vanilla
 
 ---
 
-## 🚀 Key Features & Pages
+## Key Features & Pages
 
 - **About Me (/about/)**: A dashboard status card layout detailing role, relocation preferences, and direct download links to the technical resume PDF. Includes a framed profile picture floated next to the summary text.
 - **Portfolio Showcase (/portfolio/)**: Interactive showcase utilizing client-side sidebar tabs for technical writing samples (Overview, Onboarding, CLI, API, and Troubleshooting) with structured context callouts.
@@ -32,7 +32,7 @@ Built completely with **Eleventy (11ty)**, **Nunjucks** templates, and **Vanilla
 
 ---
 
-## 🛠️ Tech Stack & Setup
+## Tech Stack & Setup
 
 - **Static Site Generator**: Eleventy (11ty)
 - **Templating**: Nunjucks
