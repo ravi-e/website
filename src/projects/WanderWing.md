@@ -45,4 +45,4 @@ Like all my projects, the source code is open on GitHub for anyone who wants to 
 ## Code & Resources
 
 - **GitHub Repository:** [github.com/ravi-e/WanderWing](https://github.com/ravi-e/WanderWing)
-- **Live App:** Coming soon! (I am still figuring out how to host it at my own domain, but I will update this section once I do.)
+- **Live App:** [WanderWing Web App](https://wanderwing.ravi-e.com/)
