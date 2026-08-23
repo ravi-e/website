@@ -37,6 +37,8 @@ It still has a few quirks I need to iron out, but this project has spent enough 
 
 Like all my projects, the source code is open on GitHub for anyone who wants to fork it and build something better. I am currently investigating how to host this website - the most easiest option is vercel, but I am also exploring if I can host it at my own domain. 
 
+Edit: I have now hosted the app on my own domain, and it is live at [wanderwing.ravi-e.com](https://wanderwing.ravi-e.com/).
+
 <div class="post-image-frame">
   <img src="/assets/photos/sikkim-lake.jpg" alt="Tsomgo Lake with prayer flags in Sikkim">
   <span class="post-image-caption">The serene waters of Tsomgo Lake framed by vibrant prayer flags.</span>
