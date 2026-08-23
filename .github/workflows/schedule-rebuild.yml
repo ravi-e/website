@@ -1,0 +1,21 @@
+name: Scheduled Cloudflare Pages Rebuild
+
+on:
+  schedule:
+    # Runs once a week on Sundays at 00:00 UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch: # Allows triggering manually from GitHub Actions tab
+
+jobs:
+  trigger-rebuild:
+    name: Trigger Cloudflare Pages Deploy Hook
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send POST request to Cloudflare Deploy Hook
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}" ]; then
+            echo "Error: CLOUDFLARE_DEPLOY_HOOK secret is not set."
+            exit 1
+          fi
+          curl -X POST -s -f -d '{}' "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}"
+          echo "Successfully triggered Cloudflare Pages build hook."
