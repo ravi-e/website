@@ -14,6 +14,13 @@ export default function(eleventyConfig) {
     return DateTime.fromJSDate(d, { zone: "utc" }).toFormat("LLL dd, yyyy");
   });
 
+  // Format date as ISO string (YYYY-MM-DD) for sitemaps
+  eleventyConfig.addFilter("isoDate", (dateObj) => {
+    if (!dateObj) return "";
+    const d = typeof dateObj === "string" ? new Date(dateObj) : dateObj;
+    return DateTime.fromJSDate(d, { zone: "utc" }).toISODate();
+  });
+
   // Limit array items
   eleventyConfig.addFilter("limit", (array, limit) => {
     if (!Array.isArray(array)) return [];
